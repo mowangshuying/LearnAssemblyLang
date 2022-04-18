@@ -1,0 +1,99 @@
+assume cs:code,ds:data,ss:stack
+
+data segment
+
+
+number			dw	65535
+
+
+data ends
+
+stack segment stack
+	db	128 dup (0)
+stack ends
+
+
+
+code segment
+
+	start:	mov ax,stack
+		mov ss,ax
+		mov sp,128
+		
+
+
+		call init_reg
+		call clear_screen
+
+
+		mov ax,number
+		mov dx,0
+
+		push ax
+
+		mov di,160*10 + 20*2
+
+		call show_number
+
+
+
+		mov ax,4C00H
+		int 21H
+
+
+
+;======================================
+show_number:	push bp
+		mov bp,sp
+
+		
+		cmp ax,0
+		jne nextShow
+		mov sp,bp
+		pop bp
+		ret	
+
+nextShow:	mov dx,0
+		mov bx,10
+		div bx
+
+		push ax
+		call show_number
+		mov ax,ss:[bp+4]
+		mov dx,0
+		mov bx,10
+		div bx
+		add dl,30H
+		mov es:[di],dl
+		add di,2
+
+
+		mov sp,bp
+		pop bp
+		ret
+
+
+;======================================
+clear_screen:	mov bx,0
+		mov dx,0700H
+		mov cx,2000
+
+clearScreen:	mov es:[bx],dx
+		add bx,2
+		loop clearScreen
+		ret
+
+;======================================
+init_reg:	mov bx,0B800H
+		mov es,bx
+
+		mov bx,data
+		mov ds,bx
+		ret
+
+
+code ends
+
+
+
+end start
