@@ -74,7 +74,7 @@ debug
 
 1、通过DosBox Status Window找到conf所在路径
 
-![image-20220418223935970](C:\Users\TS\AppData\Roaming\Typora\typora-user-images\image-20220418223935970.png)
+![image-20220418223935970](./img/image-20220418223935970.png)
 
 2、找到dosbox-0.74.conf之后，底部添加如下内容即可
 
@@ -83,7 +83,7 @@ mount  c:  E:\CodeLibraries\LearningAssemblyLanguage\Asm
 c:
 ```
 
-![image-20220418224314989](E:\CodeLibraries\LearningAssemblyLanguage\img\image-20220418224314989.png)
+![image-20220418224314989](./img/image-20220418224314989.png)
 
 3、双击打开文件
 
@@ -91,5 +91,5 @@ c:
 
 4、执行debug命令
 
-![image-20220418224509466](C:\Users\TS\AppData\Roaming\Typora\typora-user-images\image-20220418224509466.png)
+![image-20220418224509466](./img/image-20220418224509466.png)
 
