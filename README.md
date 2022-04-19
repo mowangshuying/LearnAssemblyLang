@@ -62,7 +62,7 @@ debug
 
 ###### 执行的详细过程
 
-![image-20220418222817047](C:\Users\TS\AppData\Roaming\Typora\typora-user-images\image-20220418222817047.png)
+![image-20220418222817047](./img/image-20220418222817047.png)
 
 ###### 可以输入d命令，可以看到如下输出
 
