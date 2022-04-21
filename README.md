@@ -767,3 +767,57 @@ ds es ss cs都是冒号左边的，是一种地址信息，和ip比较像
 
 
 这里只是使用了移动指令，如果加法超过寄存器中的最大值会怎么样？
+
+### 6.3 加深ax,bx,cx,dx寄存器的映象(二)
+
+做实验，看一下加法超过寄存器的最大值会怎么样？
+
+>mov ax,18 相当于 ax=18
+>
+>mov ah,78 相当于ah = 78
+>
+>add  ax,8  相当于 ax = ax+8
+
+
+
+>mov bx,ax 相当于 bx = ax
+>
+>add ax,bx 相当于 ax = ax+bx
+
+
+
+>mov ax,0   相当于 ax = 0
+>
+>mov ax,93h 相当于 ax = 93
+>
+>add al,85h  相当于 al =al+ 85
+
+
+
+>mov ax,0  相当于 ax = 0
+>
+>mov al,93h  相当于 al = 95
+>
+>add ax,85h  相当于ax = ax+85
+
+
+
+>mov ax,4e20h
+>
+>add  ax,1406h
+>
+>mov bx,2000h
+>
+>add ax,bx
+>
+>mov bx,ax
+>
+>add ax,bx                                          产生结果044c(正确结果1044c)
+
+
+
+>add al,100h   无法执行，al只能存储两个字节
+>
+>add ax,10000h 无法执行，ax只能存储四个字节
+>
+>add al,ax  不同寄存器之前不可操作，8位和16位不可以操作
