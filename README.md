@@ -821,3 +821,49 @@ ds es ss cs都是冒号左边的，是一种地址信息，和ip比较像
 >add ax,10000h 无法执行，ax只能存储四个字节
 >
 >add al,ax  不同寄存器之前不可操作，8位和16位不可以操作
+
+### 6.4 检测点2.1
+
+写出每条指令执行后相关寄存器中的值
+
+注：这里的数都是十六进制数
+
+mov ax,f4a3     ax = f4a3
+
+mov ah,31        ax = 31ah
+
+mov al,23          ax = 3123
+
+add  ax,ax         ax = ax+ax = 6246
+
+mov bx,826c     bx = 826c
+
+mov cx,ax          cx = ax = 6246
+
+mov ax,bx         ax = bx = 826c
+
+add ax,bx          ax = ax+bx = 826c+826c = 104c = 104d8  由于只能保存4位，截断 ax = 04d8
+
+mov al,bh          bh = 82,al = 82,ax = 0482
+
+mov ah,bl           bl = 6c,ax= 6c82
+
+add  ah,ah         ah = 6c,ah = ah+ah = 6c+6c = d8 ,ax = d882
+
+add al,6             al = 82,al = al+6 = 88,ax = d888
+
+add al,al            al = 88,al = al+al = 88+88 = 110 截断，al = 10
+
+ax = d810
+
+mov ax,cx         ax = 6246
+
+只能通过目前学过的汇编指令，最多使用4条指令，编程计算2的4次方 
+
+mov ax,2
+
+add ax,ax
+
+add ax,ax
+
+add ax,ax
