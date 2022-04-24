@@ -1010,9 +1010,9 @@ cpu中的cs:ip指向的地址中的数据，被读取，然后当成指令来运
 
 
 
-![image-20220424234652454](./img\image-20220424234652454.png)
+![image-20220424234652454](./img/image-20220424234652454.png)
 
-![image-20220424234758152](E:\CodeLibraries\LearningAssemblyLanguage\img\image-20220424234758152.png)
+![image-20220424234758152](./img/image-20220424234758152.png)
 
 ![image-20220424235007690](./img/image-20220424235007690.png)
 
