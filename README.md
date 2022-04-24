@@ -1005,3 +1005,15 @@ cpu中的cs:ip指向的地址中的数据，被读取，然后当成指令来运
 ![image-20220424225843009](./img/image-20220424225843009.png)
 
 ![image-20220424230331724](E:\CodeLibraries\LearningAssemblyLanguage\img\image-20220424230331724.png)
+
+### 6.14 debug调试工具使用总结
+
+
+
+![image-20220424234652454](./img\image-20220424234652454.png)
+
+![image-20220424234758152](E:\CodeLibraries\LearningAssemblyLanguage\img\image-20220424234758152.png)
+
+![image-20220424235007690](./img/image-20220424235007690.png)
+
+![image-20220424235027891](./img/image-20220424235027891.png)
