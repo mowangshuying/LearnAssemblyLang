@@ -940,11 +940,11 @@ add ax,ax
 
 通过cs和ip到cs:ip  = 2000:0
 
-![image-20220424220612826](E:\CodeLibraries\LearningAssemblyLanguage\img\image-20220424220612826.png)
+![image-20220424220612826](./img/image-20220424220612826.png)
 
 之后通过t命令-t命令来执行这些就可以了
 
-![image-20220424220705767](E:\CodeLibraries\LearningAssemblyLanguage\img\image-20220424220705767.png)
+![image-20220424220705767](./img/image-20220424220705767.png)
 
 
 
@@ -1004,7 +1004,7 @@ cpu中的cs:ip指向的地址中的数据，被读取，然后当成指令来运
 
 ![image-20220424225843009](./img/image-20220424225843009.png)
 
-![image-20220424230331724](E:\CodeLibraries\LearningAssemblyLanguage\img\image-20220424230331724.png)
+![image-20220424230331724](./img/image-20220424230331724.png)
 
 ### 6.14 debug调试工具使用总结
 
@@ -1052,6 +1052,6 @@ cpu中的cs:ip指向的地址中的数据，被读取，然后当成指令来运
 
 ![image-20220425225848619](./img/image-20220425225848619.png)
 
-![image-20220425225908534](C:\Users\TS\AppData\Roaming\Typora\typora-user-images\image-20220425225908534.png)
+![image-20220425225908534](./img/image-20220425225908534.png)
 
 ![image-20220425230056190](./img/image-20220425230056190.png)
