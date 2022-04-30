@@ -23,14 +23,14 @@ assume cs:code,ds:data,ss:stack
 
                 mov cx,8
 
-             s1:push [bx]   ;将ds:[bx]的值放入栈中
+            s1: push [bx]   ;将ds:[bx]的值放入栈中
                 add bx,2
                 loop s1
 
                 mov bx,0
                 mov cx,8
 
-             s2:pop [bx]
+            s2: pop [bx]
                 add bx,2
                 loop s2
 
