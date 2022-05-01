@@ -1251,3 +1251,14 @@ pop al	;错误 push不可以操作8位寄存器
 >将ss:sp所组成的内存地址中的字型数据 -> ax
 >
 >修改sp寄存器中的数值sp=sp+2
+
+### 7.13 栈的一个问题
+
+在debug中执行相关代码观察情况
+
+```assembly
+mov ax,0123
+push ax
+pop bx
+```
+
