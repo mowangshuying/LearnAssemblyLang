@@ -2,7 +2,7 @@
 assume cs:codesg
 
     stack segment
-        db 16 dup (0)
+        db 16 dup (0) 
     stack ends
 
     codesg segment
