@@ -28,9 +28,6 @@ assume cs:codesg
                 mov word ptr es:[7ch*4],200h
                 mov word ptr es:[7ch*4+2],0
 
-                mov ax,4c00h
-                int 21h
-
         sqr:    mul ax
                 iret
         sqrend: nop
