@@ -1652,6 +1652,26 @@ setNumber:	mov ds:[bx],dl
 
 这样就不需要使用t指令一直观察循环中的指令
 
+### 9.5 加深Loop指令的印象
+
+编程题，用编程进行加法计算123*236结果存放到ax中
+
+```assembly
+assume cs:codesg
+	codesg segment
+					mov ax,0
+					mov cx,123
+		addNumer:	add ax,236
+					loop addNumber
+		
+					mov ax,4c00h
+					int 21h
+	codesg ends
+end
+```
+
+
+
 ## 17 内中段
 
 ### 17.1中断向量表
