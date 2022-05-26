@@ -1620,7 +1620,37 @@ setNumber:	mov ds:[bx],dl
 			jmp setNumber;setNumber是标号，这里表示mov ds:[bx],dl的内存地址
 ```
 
+### 9.4 loop指令（二）
 
+loop：循环指令，跳转(jmp)指令,按照次数来跳转，循环次数（跳转次数），保存在cx寄存器中。
+
+loop指令2个步骤：
+
+1,cx = cx - 1
+
+2,判断cx中的值，不为零则跳转（jmp)到标号（内存地址）位置后，继续执行，不等于零则执行下面命令
+
+```assembly
+			mov ax,2000h
+			mov ds,ax
+			mov bx,1000h
+			mov dl,0
+			mov cx,16
+setNumber:	mov ds:[bx],dl
+			inc dl
+			inc bx
+			loop setNumber
+```
+
+如何快速执行loop指令
+
+![image-20220526224833059](./img/image-20220526224833059.png)
+
+或者通过g指令（可理解为goto)直接跳转到对应的指令
+
+![image-20220526225304632](./img/image-20220526225304632.png)
+
+这样就不需要使用t指令一直观察循环中的指令
 
 ## 17 内中段
 
