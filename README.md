@@ -1578,6 +1578,50 @@ add bx,1 占用3个字节
 
 通过一直增加bx的值，访问ds:[bx]指向的值，类似c语言中数组的访问方式
 
+### 9.3 loop指令(一)
+
+假设我们要向2000h:1000h这里开始写0123456789ABCDEF这些字节型数据，通过编程该怎么做？
+
+```assembly
+mov ax,2000h
+mov ds,ax
+mov bx,1000h
+
+mov dl,0
+
+mov ds:[bx],dl;(dl)=0 (bx)=1000
+inc dl;(dl)=1
+inc bx;(bx)=1001
+
+mov ds:[bx],dl;(dl)=1
+inc dl;(dl)=2
+inc bx;(bx)=1002
+
+mov ds:[bx],dl
+inc dl
+inc bx
+
+....
+....
+....
+
+```
+
+我们需要不断执行3条指令，需要执行16次，换句话来说就是让cpu不断执行这3条指令，可以使用jmp跳转指令去修改cpu中ip寄存器的值就可以了，不过引入了一个问题，啥时候结束这个循环
+
+```assembly
+			mov ax,2000h
+			mov ds,ax
+			mov bx,1000h
+			mov dl,0
+setNumber:	mov ds:[bx],dl
+			inc dl
+			inc bx
+			jmp setNumber;setNumber是标号，这里表示mov ds:[bx],dl的内存地址
+```
+
+
+
 ## 17 内中段
 
 ### 17.1中断向量表
