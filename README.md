@@ -1170,11 +1170,11 @@ dx:[bx] 确定数据位置
 
 #### 2、写出cpu执行每条指令后，cs,ip和相关寄存器的值
 
-![image-20220501223739540](E:\CodeLibraries\LearningAssemblyLanguage\img\image-20220501223739540.png)
+![image-20220501223739540](./img/image-20220501223739540.png)
 
 #### 3、再次体会数据和程序(指令)之间有区别吗？如何确定内存中哪些是数据,哪些是指令(程序)?
 
-![image-20220501224038595](E:\CodeLibraries\LearningAssemblyLanguage\img\image-20220501224038595.png)
+![image-20220501224038595](./img/image-20220501224038595.png)
 
 ### 7.9 检测点3.1(四)
 
@@ -1553,6 +1553,30 @@ asm文件夹下的eg1.asm,介绍了第一个汇编语言解释相关内容
 >add bx,1
 >
 >mov al,ds:[bx]
+
+### 9.2 [bx]的问题
+
+inc指令：increase(增加)
+
+inc bx (bx=bx+1)
+
+
+
+inc bx 和 add bx,1比较
+
+inc bx指令占用一个字节
+
+add bx,1 占用3个字节
+
+为了节约内存
+
+
+
+程序和内存中的情况如图所示 写出程序执行后，21000h~21007h内存单元的内容
+
+![image-20220526221458721](./img/image-20220526221458721.png)
+
+通过一直增加bx的值，访问ds:[bx]指向的值，类似c语言中数组的访问方式
 
 ## 17 内中段
 
