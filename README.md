@@ -1672,6 +1672,37 @@ end
 
 ### 9.6 加深Loop指令的映象(二)
 
+编程题 
+
+用编程求FFFF:0到FFFF:F字节型数据的和，结果存放在dx中
+
+```assembly
+assume cs:code
+
+code segment
+			    mov ax,0ffff
+				mov ds,dx
+	
+				mov bx,0	
+				mov cx,16
+				mov dx,0
+	
+				mov ax,0 ;ah =0 al =0
+	
+	addNumber:	mov al,ds:[bx]
+				inc bx
+				add dx,ax
+				loop addNumber
+				
+				mov ax,4c00h
+				int 21h
+cod ends
+
+end
+```
+
+
+
 ### 9.7 加深Loop指令的印象(三)
 
 ### 9.8 加深Loop指令的印象(四)
