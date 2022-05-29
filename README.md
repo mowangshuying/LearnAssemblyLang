@@ -1715,21 +1715,15 @@ code segment
 	mov ax,0ffffh
 	mov ds,ax
 	
+	mov ax,20h
+	mov es,ax;引入es寄存器
+	
 	mov bx,0
 	mov cx,16
 	
-	push ds
-	mov dl,ds:[bx]
-	
-  s:mov ax,20h
-	mov ds,ax
-	
-	mov ax,0
-	mov al,dl
-	
-	mov ds:[bx],al
+  s:mov al,ds:[bx]
+  	mov es:[bx],al
 	inc bx
-	pop ds
 	loop s
 	
 	mov ax,4c00h
@@ -1740,26 +1734,66 @@ end
 
 ### 9.8 加深Loop指令的印象(四)
 
-```assembly
+使用mov byte ptr
 
+```assembly
+assume cs:code
+code segment
+	mov ax,0ffffh
+	mov ds,ax
+	
+	mov ax,20h
+	mov es,ax;引入es寄存器
+	
+	mov bx,0
+	mov cx,16
+	
+  s:mov byte ptr es:[bx],ds:[bx]
+	inc bx
+	loop s
+	
+	mov ax,4c00h
+	int 21h
+code ends
+end
 ```
 
 ### 9.9 实验4(一)
 
-```assembly
+编程,向内存0:200~0:23F依次传送数据0~63(3FH)
 
+```assembly
+assume cs:code
+code segment
+	mov ax,20h
+	mov es,ax
+	
+	mov cs,64
+	mov bx,0
+	mov dl,0
+	
+   s:mov es:[bx],dl
+   	 inc dl
+   	 inc bx
+   	 loop s
+	
+	mov ax,4c00h
+	int 21h
+	
+code ends
+end
 ```
 
 ### 9.10 实验4(二)
 
-```assembly
+![image-20220529232736931](./img/image-20220529232736931.png)
 
-```
+>使用u命令查看内存分布情况
 
 ### 9.11 本章小结
 
 ```assembly
-
+总结：通过bx,inc bx,访问一段连续的内存，通过ds,es设置源地址和目标地址，最后使用循环指令loop,loop指令是根据cx的值，判断是否跳转，如果cx为0则停止跳转，如果cx不为0则跳转（还处于循环中)
 ```
 
 ## 17 内中段
