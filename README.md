@@ -1705,15 +1705,62 @@ end
 
 ### 9.7 加深Loop指令的印象(三)
 
+编程题
+
+将内存FFFF:0~FFFF:F内存单元中的数据复制到0:200~0:20F
+
+```assembly
+assume cs:code
+code segment
+	mov ax,0ffffh
+	mov ds,ax
+	
+	mov bx,0
+	mov cx,16
+	
+	push ds
+	mov dl,ds:[bx]
+	
+  s:mov ax,20h
+	mov ds,ax
+	
+	mov ax,0
+	mov al,dl
+	
+	mov ds:[bx],al
+	inc bx
+	pop ds
+	loop s
+	
+	mov ax,4c00h
+	int 21h
+code ends
+end
+```
+
 ### 9.8 加深Loop指令的印象(四)
+
+```assembly
+
+```
 
 ### 9.9 实验4(一)
 
+```assembly
+
+```
+
 ### 9.10 实验4(二)
+
+```assembly
+
+```
 
 ### 9.11 本章小结
 
+```assembly
 
+```
 
 ## 17 内中段
 
