@@ -1796,6 +1796,36 @@ end
 总结：通过bx,inc bx,访问一段连续的内存，通过ds,es设置源地址和目标地址，最后使用循环指令loop,loop指令是根据cx的值，判断是否跳转，如果cx为0则停止跳转，如果cx不为0则跳转（还处于循环中)
 ```
 
+## 10  代码段、栈段、数据段
+
+### 10.1 在代码段中安排自己定义的数据
+
+考虑这样一个问题，编程计算下面8个字型数据，结果存放到ax寄存器中
+
+1,2,3,4,5,6,7,8,
+
+思路：安排在一段连续的内存中，loop指令，add ax,ds:[bx] add bx,2
+
+```assembly
+assume cs:codesg
+	codesg segment
+				# 自定义数据
+				dw 1,2,3,4,5,6,7,8
+				# 确定初始标志
+	start:		mov ax,0
+				mov cx,8
+				mov bx,0
+		
+	   s:       add ax,cs:[bx]
+	   			add bx,2
+	   			loop s
+	
+				mov ax,4c00h
+				int 21h
+	codesg ends
+end start
+```
+
 ## 17 内中段
 
 ### 17.1中断向量表
