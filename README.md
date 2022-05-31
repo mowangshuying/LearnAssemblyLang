@@ -1826,6 +1826,47 @@ assume cs:codesg
 end start
 ```
 
+### 10.2 在代码段中安排自己的栈空间
+
+如何定义自己的栈（通过系统分配的内存)
+
+完成下面程序，利用栈，将程序中定义的数据逆序存放
+
+```assembly
+assume cs:codesg
+	codesg segment
+		dw 0123h,0456h,0789h,0abch,0defh,0fedh,0cbah,0987h
+		??
+	codesg ends
+end
+```
+
+此处修改了原版代码，因为push进去的时候，栈的空间是由高到底的，所以只要push就可以了.无需进行pop
+
+```assembly
+assume cs:codesg
+	codesg segment
+			dw 0123h,0456h,0789h,0abch,0defh,0fedh,0cbah,0987h
+			dw 0,0,0,0,0,0,0,0
+	start:	mov ax,cs
+			mov ss,ax
+			
+			mov sp,32
+			mov cx,8
+			mov bx,0
+			
+		s:	push cs:[bx]
+			add bx,2
+			loop s
+			
+			mov ax,4c00h
+			int 21h
+	codesg ends
+end
+```
+
+总结：ss:sp确定栈顶，利用push和pop对栈顶指针操作
+
 ## 17 内中段
 
 ### 17.1中断向量表
