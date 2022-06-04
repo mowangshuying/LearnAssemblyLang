@@ -1867,6 +1867,14 @@ end
 
 总结：ss:sp确定栈顶，利用push和pop对栈顶指针操作
 
+### 10.3 检测点6.1
+
+![image-20220604170141533](./img/image-20220604170141533.png)
+
+![image-20220604170412031](E:\CodeLibraries\MWSY-LearningAssemblyLanguage\img\image-20220604170412031.png)
+
+![image-20220604170449006](E:\CodeLibraries\MWSY-LearningAssemblyLanguage\img\image-20220604170449006.png)
+
 ## 17 内中段
 
 ### 17.1中断向量表
