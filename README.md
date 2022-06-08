@@ -1989,7 +1989,17 @@ end start
 >
 >总的来说占用字节数一定是16的倍数
 
+### 10.2 实验五(二)
 
+![image-20220608225046962](E:\CodeLibraries\MWSY-LearningAssemblyLanguage\img\image-20220608225046962.png)
+
+>db (define byte)
+
+![image-20220608225726184](E:\CodeLibraries\MWSY-LearningAssemblyLanguage\img\image-20220608225726184.png)
+
+> 两种不同的做法，将a或者b设置为栈段
+
+![image-20220608230309226](E:\CodeLibraries\MWSY-LearningAssemblyLanguage\img\image-20220608230309226.png)
 
 ## 17 内中段
 
