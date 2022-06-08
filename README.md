@@ -1875,6 +1875,35 @@ end
 
 ![image-20220604170449006](E:\CodeLibraries\MWSY-LearningAssemblyLanguage\img\image-20220604170449006.png)
 
+### 10.4 将数据、代码、栈放入不同的段
+
+```assembly
+assume cs:codesg,ds:datasg,ss:stacksg
+	datasg segment
+	.....
+	datasg ens
+	
+	stacksg segment
+	....
+	stacksg segment
+	
+	codesg segment
+	start: ....
+			....
+			// 设置数据段，让ds指向datasg段地址
+			// 设置栈段，让ss:sp向stacksg中段地址和偏移地址
+	codesg ends
+end start
+```
+
+```assembly
+stacksg segment stack
+stacksg ends
+//用于消除警告
+```
+
+
+
 ## 17 内中段
 
 ### 17.1中断向量表
