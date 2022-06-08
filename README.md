@@ -1902,6 +1902,93 @@ stacksg ends
 //用于消除警告
 ```
 
+### 10.5 实验5(一)
+
+实验5编写，调试具有多个段的程序，段的编译规则，内存的分布，观察1每个段编译后实际占多少个字节
+
+```assembly
+; 将数据、代码、栈放入不同的段
+;在代码段中使用栈，利用栈将
+;   0123h,0456h,0789h,0abch,0defh,0fedh,0cbah,0987h
+;实现数据逆序存放
+
+assume cs:code,ds:data,ss:stack
+    data segment
+        dw 0123h,0456h,0789h,0abch,0defh,0fedh,0cbah,0987h
+    data ends
+
+    stack segment
+        dw 0,0,0,0,0,0,0,0
+    stack ends
+
+    code segment
+         start: mov ax,stack ;将栈的首地址放入ax中
+                mov ss,ax    ;将ax中的值赋值给ss
+                mov sp,20h   ;将栈顶ss:sp指向stack:20
+
+                mov ax,data  ;将数据段首地址赋值给ax
+                mov ds,ax    ;将数据段首地址赋值给ax,即是(ds) = (ax)
+                mov bx,0     ;将bx设置为0
+
+                mov cx,8
+
+            s1: push [bx]   ;将ds:[bx]的值放入栈中
+                add bx,2
+                loop s1
+
+                mov bx,0
+                mov cx,8
+
+            s2: pop [bx]
+                add bx,2
+                loop s2
+
+                mov ax,4c00h
+                int 21h 
+
+    code ends
+
+end start
+```
+
+问题
+
+1 cpu执行程序，程序返回前，data中的数据为多少
+
+>data段中所占内存大小为16字节（8个字）
+
+2 cpu执行程序，程序返回前 cs? ss? ds?
+
+> 运行程序，直接查看即可
+>
+>cs=076ch
+>
+>ss=076bh
+>
+>ds=076ah
+
+3  程序加载后，code的段地址为x，则data段的段地址为？ stack段的段地址为？
+
+>x-2
+>
+>x-1
+>
+>段地址*10h+偏移地址 = 物理地址
+>
+>076ah\*10h+10h = 076bh+0h
+>
+>076bh\*10h+10h = 076ch+0h
+
+
+
+4.如果段中的数据占用N个字节，则程序加载后，该段实际占用的空间为？
+
+>如果N%16==0的话，则占用N个字节
+>
+>否则占用(N/16+1) *16个字节
+>
+>总的来说占用字节数一定是16的倍数
+
 
 
 ## 17 内中段
