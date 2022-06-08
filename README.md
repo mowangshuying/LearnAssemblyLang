@@ -1989,7 +1989,7 @@ end start
 >
 >总的来说占用字节数一定是16的倍数
 
-### 10.2 实验五(二)
+### 10.6 实验五(二)
 
 ![image-20220608225046962](E:\CodeLibraries\MWSY-LearningAssemblyLanguage\img\image-20220608225046962.png)
 
@@ -2000,6 +2000,14 @@ end start
 > 两种不同的做法，将a或者b设置为栈段
 
 ![image-20220608230309226](E:\CodeLibraries\MWSY-LearningAssemblyLanguage\img\image-20220608230309226.png)
+
+### 10.7 本章小结
+
+![image-20220608231401921](E:\CodeLibraries\MWSY-LearningAssemblyLanguage\img\image-20220608231401921.png)
+
+### 10.8 突然想到的一个灵感
+
+![image-20220608231745694](E:\CodeLibraries\MWSY-LearningAssemblyLanguage\img\image-20220608231745694.png)
 
 ## 17 内中段
 
