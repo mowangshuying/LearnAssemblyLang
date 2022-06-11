@@ -1871,9 +1871,9 @@ end
 
 ![image-20220604170141533](./img/image-20220604170141533.png)
 
-![image-20220604170412031](E:\CodeLibraries\MWSY-LearningAssemblyLanguage\img\image-20220604170412031.png)
+![image-20220604170412031](./img/image-20220604170412031.png)
 
-![image-20220604170449006](E:\CodeLibraries\MWSY-LearningAssemblyLanguage\img\image-20220604170449006.png)
+![image-20220604170449006](./img/image-20220604170449006.png)
 
 ### 10.4 将数据、代码、栈放入不同的段
 
@@ -1991,23 +1991,23 @@ end start
 
 ### 10.6 实验五(二)
 
-![image-20220608225046962](E:\CodeLibraries\MWSY-LearningAssemblyLanguage\img\image-20220608225046962.png)
+![image-20220608225046962](./img/image-20220608225046962.png)
 
 >db (define byte)
 
-![image-20220608225726184](E:\CodeLibraries\MWSY-LearningAssemblyLanguage\img\image-20220608225726184.png)
+![image-20220608225726184](./img/image-20220608225726184.png)
 
 > 两种不同的做法，将a或者b设置为栈段
 
-![image-20220608230309226](E:\CodeLibraries\MWSY-LearningAssemblyLanguage\img\image-20220608230309226.png)
+![image-20220608230309226](./img/image-20220608230309226.png)
 
 ### 10.7 本章小结
 
-![image-20220608231401921](E:\CodeLibraries\MWSY-LearningAssemblyLanguage\img\image-20220608231401921.png)
+![image-20220608231401921](./img/image-20220608231401921.png)
 
 ### 10.8 突然想到的一个灵感
 
-![image-20220608231745694](E:\CodeLibraries\MWSY-LearningAssemblyLanguage\img\image-20220608231745694.png)
+![image-20220608231745694](./img/image-20220608231745694.png)
 
 ## 11 更灵活的定位地址的方法
 
